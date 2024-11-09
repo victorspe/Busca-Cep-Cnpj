@@ -1,0 +1,13 @@
+<div class="flex flex-wrap justify-content-center"  *ngIf="exibindoBotoes()">
+    <div class="col-12 md:col-6 lg:col-3">
+        <p-button label="CEP" routerLink="/cep"></p-button>
+    </div>
+
+    <div class="col-12 md:col-6 lg:col-3">
+        <p-button label="CNPJ" routerLink="/cnpj"></p-button>
+    </div>
+</div>
+
+<p-toast></p-toast>
+
+<router-outlet></router-outlet>

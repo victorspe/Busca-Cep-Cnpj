@@ -1,0 +1,42 @@
+<form #form="ngForm">
+  <div class="col-12">
+    <p-button icon="pi pi-arrow-left" styleClass="p-button-rounded p-button-text p-button-raised" routerLink="/"></p-button>
+  </div>
+  <div class="col-8 md:col-6 lg:col-3">
+    <p-inputMask type="tel" mask="99999-999" [(ngModel)]="buscacep"    minlength="8"  (onBlur)="buscarCEP(buscacep, form)"  name="cep" placeholder="99-999999" [unmask]="true" [required]="true"></p-inputMask>
+  </div>
+
+  <div class="col-4 md:col-6 lg:col-3">
+    <button pButton type="button" label="Pesquisar" class="p-button-raised"
+    (click)="buscarCEP(buscacep, form)" [disabled]="form.invalid"></button>
+  </div>
+
+  <div class="flex flex-wrap mt-5" *ngIf="buscar">
+   
+   
+    <div class="col-12 md:col-6 lg:col-3">
+      <span class="p-float-label">
+        <input class="w-full" pInputText ngModel id="logradouro" name="logradouro" disabled="true">
+        <label htmlFor="logradouro">Logradouro</label>
+      </span>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 mt-2">
+      <span class="p-float-label">
+        <input class="w-full" pInputText id="bairro" name="bairro" ngModel disabled="true">
+        <label htmlFor="bairro">Bairro</label>
+      </span>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 mt-2">
+      <span class="p-float-label">
+        <input class="w-full" pInputText id="cidade" name="cidade" ngModel disabled="true">
+        <label htmlFor="cidade">Cidade</label>
+      </span>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 mt-2">
+      <span class="p-float-label">
+        <input class="w-full" pInputText id="estado" name="estado" ngModel disabled="true">
+        <label htmlFor="estado">Estado</label>
+      </span>
+    </div>
+  </div>
+</form>
